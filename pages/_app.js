@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }) {
     },
 
     typography: {
-      fontFamily: ["lato"].join(","),
+      // fontFamily: ["lato"].join(","),
     },
   });
 
