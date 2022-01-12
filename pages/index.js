@@ -1,12 +1,13 @@
 import Head from "next/head";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Paper, Typography } from "@mui/material";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
-    <Box>
+    <Paper>
       <Button>this is a button</Button>
-    </Box>
+      <Typography fontWeight={"bold"}>hellloooo latoo</Typography>
+    </Paper>
   );
 }
