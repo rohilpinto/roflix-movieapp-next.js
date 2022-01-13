@@ -2,9 +2,7 @@ import { Box, Button, Paper, Typography } from "@mui/material";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
-import firebase from "../firebase/init.firebase";
 
-firebase();
 
 export default function Home(props) {
   return (
