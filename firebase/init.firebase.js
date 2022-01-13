@@ -17,17 +17,18 @@ const firebaseConfig = {
 };
 
 export default function initFirebase() {
-  firebase.initializeApp(firebaseConfig);
-  // Check that `window` is in scope for the analytics module!
-  // if (typeof window !== "undefined") {
-  //   // Enable analytics. https://firebase.google.com/docs/analytics/get-started
-  //   if ("measurementId" in firebaseConfig) {
-  //     firebase.analytics();
-  //     firebase.performance();
-  //   }
-  // }
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+    // Check that `window` is in scope for the analytics module!
+    if (typeof window !== "undefined") {
+      // Enable analytics. https://firebase.google.com/docs/analytics/get-started
+      if ("measurementId" in firebaseConfig) {
+        firebase.analytics();
+        firebase.performance();
+      }
+    }
 
-  console.log("firebase is initialized");
+    console.log("firebase is initialized");
+  }
 }
-
 // export const db = getFirestore(app);
