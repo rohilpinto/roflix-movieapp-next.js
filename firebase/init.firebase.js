@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import firebase from "firebase/compat/app";
-// import "firebase/compat/analytics"; // If you need it
-// import "firebase/compat/performance"; // If you need it
+import "firebase/compat/analytics"; // If you need it
+import "firebase/compat/performance"; // If you need it
 
 // import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
