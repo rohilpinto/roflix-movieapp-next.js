@@ -1,13 +1,9 @@
+import { useContext, useState } from "react";
 import Head from "next/head";
-import { Box, Button, Paper, Typography } from "@mui/material";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import { MOVIE_DB_KEY } from "../const";
 
-export default function Home() {
-  return (
-    <Paper>
-      <Button>this is a button</Button>
-      <Typography fontWeight={"bold"}>hellloooo latoo</Typography>
-    </Paper>
-  );
+import { Box, Button, getStepLabelUtilityClass, Paper, Typography } from "@mui/material";
+
+export default function Home(props) {
+  return <Paper></Paper>;
 }

@@ -1,6 +1,8 @@
 import { createTheme, ThemeProvider } from "@mui/material";
 // import "../styles/globals.css";
 import CssBaseline from "@mui/material/CssBaseline";
+import { globalTheme } from "../Mui-Theme";
+import AppStateWrapper from "../context/AppState";
 
 import "@fontsource/lato";
 import "@fontsource/lato/100.css";
@@ -10,33 +12,14 @@ import "@fontsource/lato/700.css";
 import "@fontsource/lato/900.css";
 
 function MyApp({ Component, pageProps }) {
-  const globalTheme = createTheme({
-    palette: {
-      mode: "light",
-      primary: {
-        light: "#d05ce3",
-        main: "#9c27b0",
-        dark: "#6a0080",
-      },
-
-      secondary: {
-        light: "#484848",
-        main: "#212121",
-        dark: "#000000",
-      },
-    },
-
-    typography: {
-      fontFamily: ["Lato"].join(","),
-    },
-  });
-
   return (
     <div>
-      <ThemeProvider theme={globalTheme}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <AppStateWrapper>
+        <ThemeProvider theme={globalTheme}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </AppStateWrapper>
     </div>
   );
 }
