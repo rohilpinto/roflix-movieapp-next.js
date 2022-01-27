@@ -1,8 +1,8 @@
-import { createTheme, ThemeProvider } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
 // import "../styles/globals.css";
+import Layout from "../components/layout";
 import CssBaseline from "@mui/material/CssBaseline";
 import { globalTheme } from "../Mui-Theme";
-import AppStateWrapper from "../context/AppState";
 
 import "@fontsource/lato";
 import "@fontsource/lato/100.css";
@@ -14,12 +14,12 @@ import "@fontsource/lato/900.css";
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <AppStateWrapper>
-        <ThemeProvider theme={globalTheme}>
-          <CssBaseline />
+      <ThemeProvider theme={globalTheme}>
+        <CssBaseline />
+        <Layout>
           <Component {...pageProps} />
-        </ThemeProvider>
-      </AppStateWrapper>
+        </Layout>
+      </ThemeProvider>
     </div>
   );
 }
