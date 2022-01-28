@@ -1,12 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../components/Card";
 import DiscoverCard from "../components/Card/Discover";
 
-
-const Discover = (props) => {
+const Discover = () => {
   const [page, setPage] = useState(1);
-  const [discoverResults, setDiscoverResults] = useState(props.data.results);
+  const [discoverResults, setDiscoverResults] = useState([]);
+
+  useEffect(() => {
+    const fetchPopular = async () => {
+      const movieData = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_MOVIE_DB_KEY}&language=en-US&page=${page}`);
+
+      console.log(movieData);
+
+      setDiscoverResults(movieData.data.results);
+    };
+    fetchPopular();
+  }, []);
 
   // console.log(discoverResults, page);
 
@@ -18,13 +28,3 @@ const Discover = (props) => {
 };
 
 export default Discover;
-
-export async function getServerSideProps() {
-  const movieData = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=6d6bb75c77e37b02d30cf6a423dffc23&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${1}&with_watch_monetization_types=flatrate`);
-
-  return {
-    props: {
-      data: movieData.data,
-    },
-  };
-}
