@@ -16,6 +16,7 @@ const Discover = () => {
       setDiscoverResults(movieData.data.results);
     };
     fetchPopular();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // console.log(discoverResults, page);
