@@ -1,12 +1,6 @@
 import { useContext, useState } from "react";
-import Head from "next/head";
-import { MOVIE_DB_KEY } from "../const";
-import app from "../firebase";
-import { Box, Button, Paper, Typography } from "@mui/material";
-import axios from "axios";
+import { Button } from "@mui/material";
 
-// import firebase from "../firebase/init.firebase";
-
-export default function Home(props) {
+export default function Home() {
   return <Button>Login</Button>;
 }

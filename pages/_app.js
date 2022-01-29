@@ -13,18 +13,17 @@ import "@fontsource/lato/300.css";
 import "@fontsource/lato/400.css";
 import "@fontsource/lato/700.css";
 import "@fontsource/lato/900.css";
+
 // firebase();
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div>
-      <ThemeProvider theme={globalTheme}>
-        <CssBaseline />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ThemeProvider>
-    </div>
+    <ThemeProvider theme={globalTheme}>
+      <CssBaseline />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
   );
 }
 

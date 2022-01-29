@@ -1,16 +1,25 @@
 import React, { useState } from "react";
-import { Box, Paper } from "@mui/material";
 import Image from "next/image";
+import { Box, Grid, Paper, Stack, Typography } from "@mui/material";
 
-const Discover = (props) => {
-  const results = props.results;
+const Discover = ({ results: propResults }) => {
+  const results = propResults;
+  console.log(results);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <Box sx={{ width: "200px" }}>
-      <Image src={`https://image.tmdb.org/t/p/w200${results.poster_path}`} alt="poster" width={200} height={300} />
+    <Stack justifyContent={"center"} alignItems={"center"}>
+      <Box sx={{ width: "300px", p: 1 }}>
+        {!isLoaded && "loading...."}
+        <Image src={`https://image.tmdb.org/t/p/w300${results.poster_path}`} alt="poster" width="300px" height="450px" style={!isLoaded ? { display: "none" } : {}} onLoadingComplete={() => setIsLoaded(true)} />
+      </Box>
 
-      <Box>{results.title}</Box>
-    </Box>
+      <Box sx={{ width: "200px", minHeight: "70px", textAlign: "center" }}>
+        <Typography variant="h6" color="light.main">
+          {results.title}
+        </Typography>
+      </Box>
+    </Stack>
   );
 };
 

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <Stack direction={"row"} spacing={2}>
+    <Stack direction={"row"} spacing={5}>
       <Box>
         <MenuIcon />
       </Box>

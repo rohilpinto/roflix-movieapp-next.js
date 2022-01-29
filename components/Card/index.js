@@ -2,13 +2,17 @@ import React from "react";
 import { Box } from "@mui/material";
 import uniqueId from "lodash.uniqueid";
 
-const Card = ({ items, render }) => {
+const Card = ({ items, render, ...props }) => {
   return (
-    <Box>
-      {items.map((items) => {
-        return <React.Fragment key={uniqueId("randomid")}>{render(items)}</React.Fragment>;
+    <>
+      {items?.map((items) => {
+        return (
+          <React.Fragment {...props} key={uniqueId("randomid")}>
+            {render(items)}
+          </React.Fragment>
+        );
       })}
-    </Box>
+    </>
   );
 };
 

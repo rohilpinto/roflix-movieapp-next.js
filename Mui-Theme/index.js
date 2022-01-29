@@ -1,18 +1,25 @@
-import { createTheme } from "@mui/material";
+import { createTheme, responsiveFontSizes } from "@mui/material";
+import { grey } from "@mui/material/colors";
 
-const globalTheme = createTheme({
+let globalTheme = createTheme({
   palette: {
     mode: "light",
     primary: {
       light: "#d05ce3",
       main: "#9c27b0",
       dark: "#6a0080",
+      contrastText: "#000000",
     },
 
     secondary: {
       light: "#484848",
       main: "#212121",
       dark: "#000000",
+      contrastText: "#ffffff",
+    },
+
+    light: {
+      main: grey[50],
     },
   },
 
@@ -20,5 +27,7 @@ const globalTheme = createTheme({
     fontFamily: ["Lato"].join(","),
   },
 });
+
+globalTheme = responsiveFontSizes(globalTheme);
 
 export { globalTheme };
