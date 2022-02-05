@@ -17,7 +17,7 @@ const Discover = (props) => {
     // Always do navigations after the first render
     router.push(`/discover?page=${page}`);
     setDiscoverResults(movies?.data.results);
-    console.log(router);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, movies]);
 

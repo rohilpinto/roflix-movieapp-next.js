@@ -6,6 +6,6 @@ module.exports = {
   // },
 
   images: {
-    domains: ["tmdb.org", "themoviedb.org", "image.tmdb.org"],
+    domains: ["tmdb.org", "themoviedb.org", "image.tmdb.org", "firebase.google.com", "dummyimage.com", "lh3.googleusercontent.com"],
   },
 };
