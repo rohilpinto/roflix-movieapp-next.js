@@ -6,14 +6,14 @@ import Stack from "@mui/material/Stack";
 
 const Layout = ({ children }) => {
   return (
-    <Box sx={{ bgcolor: "secondary.main" }}>
+    <Box sx={{ bgcolor: "primary.extraDark" }}>
       <Navbar />
 
       <Box sx={{ mt: 2 }}>{children}</Box>
 
-      <Stack spacing={2} justifyContent={"center"} alignItems={"center"} sx={{ p: 2, backgroundBlendMode: "hue" }}>
+      {/* <Stack spacing={2} justifyContent={"center"} alignItems={"center"} sx={{ p: 2 }}>
         <Pagination count={5} variant="text" shape="rounded" color="primary" />
-      </Stack>
+      </Stack> */}
     </Box>
   );
 };

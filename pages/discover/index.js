@@ -11,13 +11,20 @@ const Discover = (props) => {
 
   const [page, setPage] = useState(1);
   const [movies] = useGetPopularMovies(page);
-  const [discoverResults, setDiscoverResults] = useState();
+  const [discoverResults, setDiscoverResults] = useState([]);
 
   useEffect(() => {
     // Always do navigations after the first render
+    let isMounted = true;
     router.push(`/discover?page=${page}`);
-    setDiscoverResults(movies?.data.results);
 
+    if (isMounted) {
+      setDiscoverResults(movies?.data.results);
+    }
+
+    return () => {
+      isMounted = false;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, movies]);
 

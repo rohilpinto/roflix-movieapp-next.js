@@ -7,7 +7,7 @@ import Layout from "../components/Layout";
 import CssBaseline from "@mui/material/CssBaseline";
 import { globalTheme } from "../Mui-Theme";
 import { InitFireBase } from "../firebase";
-
+import "../styles/globals.css";
 import "@fontsource/lato";
 import "@fontsource/lato/100.css";
 import "@fontsource/lato/300.css";
